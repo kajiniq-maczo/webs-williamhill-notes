@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威廉希尔 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f2f4f7;
+            color: #1e2a3a;
+            line-height: 1.65;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        /* hero 区域 ———— 主视觉卡片 */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 540;
+            letter-spacing: -0.02em;
+            color: #0b1a2b;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #4a5b6e;
+            max-width: 680px;
+            border-left: 4px solid #7b8fa3;
+            padding-left: 1.2rem;
+            margin-top: 0.4rem;
+        }
+
+        /* 通用卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem 2rem;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.06);
+        }
+
+        .card-icon {
+            display: inline-block;
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: #3e5a72;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: 520;
+            margin: 0.5rem 0 0.6rem 0;
+            color: #142435;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: #2d3f52;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
+        }
+
+        .info-card li {
+            font-size: 0.92rem;
+            padding: 0.2rem 0 0.2rem 1.2rem;
+            position: relative;
+            color: #2a3d51;
+        }
+
+        .info-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #6b85a0;
+        }
+
+        /* 自然链接段落卡片 (大段说明) */
+        .text-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .text-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #102231;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e6ecf3;
+            padding-bottom: 0.6rem;
+        }
+
+        .text-card p {
+            margin-bottom: 1rem;
+            color: #1f3246;
+        }
+
+        .text-card a {
+            color: #1d5b8b;
+            text-decoration: none;
+            font-weight: 470;
+            border-bottom: 1px solid rgba(26, 82, 128, 0.2);
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .text-card a:hover {
+            color: #0a3a5c;
+            border-bottom-color: #0a3a5c;
+        }
+
+        .faq-brief {
+            margin-top: 1.5rem;
+            background: #f6f9fe;
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            border-left: 4px solid #7a96b0;
+        }
+
+        .faq-brief summary {
+            font-weight: 470;
+            cursor: pointer;
+            color: #102231;
+            font-size: 1rem;
+        }
+
+        .faq-brief p {
+            margin-top: 0.6rem;
+            font-size: 0.94rem;
+            color: #2b4055;
+        }
+
+        /* 适合人群 ———— 使用内联卡片风格 */
+        .audience-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .audience-tag {
+            background: #eaf0f7;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #1f3750;
+            border: 1px solid #d4dee9;
+        }
+
+        .tip-note {
+            background: #f9fafc;
+            border-radius: 14px;
+            padding: 0.8rem 1.2rem;
+            border: 1px dashed #c6d3e2;
+            font-size: 0.92rem;
+            color: #31495f;
+            margin-top: 1rem;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            text-align: center;
+            padding: 2rem 0 0.5rem;
+            font-size: 0.85rem;
+            color: #6b7f93;
+            border-top: 1px solid #dce4ed;
+            margin-top: 1rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+            .hero-title {
+                font-size: 1.9rem;
+            }
+            .text-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .info-card {
+                padding: 1.4rem 1.2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉卡片 -->
+    <div class="hero-card">
+        <div class="hero-title">威廉希尔 · 站点概览</div>
+        <div class="hero-sub">一个从使用场景出发的信息说明页，整理关于网站的基本定位、服务方向与可信参考。</div>
+        <div style="margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.9rem; color: #3d5770;">
+            <span>✓ 用途说明</span>
+            <span>✓ 适用人群</span>
+            <span>✓ 背景参考</span>
+        </div>
+    </div>
+
+    <!-- 用途卡片 + 适合人群 (两列网格) -->
+    <div class="card-grid">
+        <div class="info-card">
+            <div class="card-icon">📌</div>
+            <h3>主要用途</h3>
+            <p>该站点面向对线上信息服务有需求的用户，提供整合式的功能入口与内容聚合。从基础查询到分类索引，平台尝试将常见使用路径集中呈现。</p>
+            <ul>
+                <li>信息检索与分类导航</li>
+                <li>内容板块聚合</li>
+                <li>服务引导与说明</li>
+            </ul>
+        </div>
+        <div class="info-card">
+            <div class="card-icon">👥</div>
+            <h3>适合人群</h3>
+            <p>无论你是刚开始接触线上工具，还是希望更高效地获取分类信息，这个站点都提供了一定程度的清晰结构。</p>
+            <div class="audience-highlight">
+                <span class="audience-tag">日常使用者</span>
+                <span class="audience-tag">信息整理爱好者</span>
+                <span class="audience-tag">轻量参考型用户</span>
+                <span class="audience-tag">多板块浏览者</span>
+            </div>
+            <div class="tip-note">
+                💡 站点并不针对特定人群排他，更多是提供一种可浏览的信息组织方式。
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="card-icon">🧩</div>
+            <h3>特点与侧重</h3>
+            <p>界面以功能分区为主，减少冗余装饰。内容模块之间保持相对独立，方便快速定位。整体风格偏向实用和直接。</p>
+            <ul>
+                <li>分区清晰，减少跳转层级</li>
+                <li>内容更新保持一定节奏</li>
+                <li>对移动设备浏览做了适配</li>
+            </ul>
+        </div>
+        <div class="info-card">
+            <div class="card-icon">🔍</div>
+            <h3>使用场景示例</h3>
+            <p>当你需要快速了解某一分类下的信息概况，或者想对比不同服务模块时，这个站点可以作为一个起点参考。</p>
+            <ul>
+                <li>初步浏览不同板块的内容方向</li>
+                <li>查找常见分类下的说明摘要</li>
+                <li>作为信息索引的中转页面</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 自然链接段落卡片 —— 站点介绍与可信说明 -->
+    <div class="text-card">
+        <h2>站点说明 · 可信参考</h2>
+        <p>在整理这个介绍页时，我们尝试从一个客观的角度去描述站点的结构：它不夸大自身的功能，也不承诺无法验证的结果。如果你对线上信息平台有一定的使用经验，可能会发现它更像一个“信息导览”——把不同用途的模块放在一起，让浏览者自行判断和选择。</p>
+        <p>关于可信说明：任何线上站点都建议用户结合自身需求进行独立判断。我们在这里整理的信息仅基于公开可观察到的页面结构与内容分类，不包含主观诱导或超出实际的描述。如果你希望直接了解站点的实际界面与功能，可以访问 <a href="https://webs--williamhill.com">威廉希尔</a>，查看其当前提供的信息板块与导航方式。页面设计、内容更新均由站点方维护，建议以实际页面为准。</p>
+        <p>同时需要留意：不同设备或网络环境下，站点的加载与呈现可能存在细微差异。如果你在浏览过程中遇到任何疑问，建议参考站点内的帮助说明或联系其官方支持渠道。本介绍页仅作为外部参考，不替代原始站点的官方说明。</p>
+
+        <!-- 简明 FAQ 摘要 (折叠风格) -->
+        <div class="faq-brief">
+            <details>
+                <summary>❓ 常见简要问题 (FAQ 摘要)</summary>
+                <p><strong>这个站点主要提供什么？</strong> 从页面结构看，它集合了多种分类信息与入口，用途偏向索引和内容聚合。</p>
+                <p><strong>信息可靠吗？</strong> 任何平台都有其信息来源与维护机制，建议用户根据自身标准判断。此介绍页仅描述公开可见的结构。</p>
+                <p><strong>是否需要注册？</strong> 具体功能权限请以实际站点页面提示为准，不同板块可能有不同规则。</p>
+                <p><strong>可以信任链接吗？</strong> 本页中提到的 <a href="https://webs--williamhill.com" style="border-bottom: 1px solid rgba(26,82,128,0.2);">威廉希尔</a> 为原始域名，是否采用取决于用户个人评估。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 额外的提示卡片 (保持内容丰富, 同时避免模板感) -->
+    <div style="background: #ffffff; border-radius: 20px; padding: 1.6rem 2rem; border: 1px solid #e2e8ef; box-shadow: 0 2px 8px rgba(0,0,0,0.02); margin-bottom: 1.5rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-start;">
+            <div style="flex: 2; min-width: 200px;">
+                <h3 style="font-weight: 500; font-size: 1.2rem; margin-bottom: 0.4rem; color: #142435;">📋 浏览前可了解</h3>
+                <p style="color: #2d4055; font-size: 0.95rem;">网站内容可能随时间调整，本介绍页所描述的结构基于近期观察。若发现页面布局或分类有变化，属正常迭代。</p>
+            </div>
+            <div style="flex: 1; min-width: 140px; background: #eef3f9; border-radius: 14px; padding: 0.8rem 1rem;">
+                <span style="font-weight: 450; color: #1a3652;">📎 外部参考</span>
+                <div style="font-size: 0.9rem; margin-top: 0.3rem; color: #244b6b;">
+                    <a href="https://webs--williamhill.com" style="color: #1d5b8b; text-decoration: none; border-bottom: 1px solid rgba(26,82,128,0.2);">威廉希尔</a> · 当前站点
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        本页为独立介绍说明 · 内容基于公开信息整理 · 仅供参考
+    </div>
+
+</div>
+</body>
+</html>
